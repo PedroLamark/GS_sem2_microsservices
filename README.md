@@ -1,4 +1,4 @@
-# E-commerce
+# Distribuidoras
 
 ## Database
 
@@ -13,35 +13,12 @@ docker run -d \
     mysql
 ```
 
-application.properties
-
-```
-spring.datasource.url=jdbc:mysql://localhost:3306/api?createDatabaseIfNotExist=true
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-```
-
-## Environment
-
-.env
-
-```
-DATABASE_URL=jdbc:mysql://localhost:3306/api?createDatabaseIfNotExist=true
-DATABASE_USER=root
-DATABASE_PWD=root_pwd
-```
-
-* load .env
-
-```sh
-export $(cat .env | xargs)
-```
-
 ## Maven
 
 * run
 
 ```sh
-mvn spring-boot:run -Dspring-boot.run.profiles=prd
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 ## Docker
@@ -49,7 +26,7 @@ mvn spring-boot:run -Dspring-boot.run.profiles=prd
 * build 
 
 ```sh
-docker build -t ecommerce .
+docker build -t distribuidoras .
 ```
 
 * run
@@ -62,7 +39,7 @@ docker run -d \
     -e DATABASE_URL=jdbc:mysql://localhost:3306/api?createDatabaseIfNotExist=true \
     -e DATABASE_USER=root \
     -e DATABASE_PWD=root_pwd \
-    ecommerce
+    distribuidoras
 ```
 
 ## References
